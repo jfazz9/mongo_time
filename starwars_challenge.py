@@ -33,7 +33,7 @@ class Shipdata:
                 url_pilot_ships[name] = []
         return url_pilot_ships
 
-    def clean_urls(self, pilot_dict):
+    def clean_urls(self, pilot_dict): # delete the urls from the dictionary after retrieved names
         for name, value in pilot_dict.items():
             if value == []:
                 continue
