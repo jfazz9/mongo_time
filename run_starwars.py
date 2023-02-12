@@ -18,9 +18,10 @@ if __name__=="__main__":
     
     '''create and update the values'''
     lets_update = Updateship(db) #initialise all updates
-    lets_update.create_new_collection("starships") #
+    db.create_collection("starships")
+    # lets_update.create_new_collection("starships") #
     data_api = lets_update.starship_data_api()
-
+    
     data_sort = []
     for page in range(1, len(data_api)+1):
         data_sort += lets_update.compile_pages_to_data(data_api, page)

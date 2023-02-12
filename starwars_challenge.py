@@ -78,9 +78,10 @@ class Character(Shipdata):
                         api_dict[v[0]][a] = i
         return api_dict
 
-class Updateship:
-    def __init__(self, db):
+class Updateship(Shipdata):
+    def __init__(self,db):
         self.db = db
+        super().__init__(self)
 
     def create_new_collection(self, name):
         self.db.create_collection(name)
@@ -91,7 +92,7 @@ class Updateship:
         page =1
         getting_data = True
         while getting_data:
-            data[page] = Shipdata.get_data(page)
+            data[page] = super().get_data(page)
             if data[page]['next'] != None:
                 page += 1
             else:
