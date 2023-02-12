@@ -17,8 +17,8 @@ if __name__=="__main__":
     name_val = Character.convert_dict_name_id(name_id, ship_pilot_id) #compile ship name with object_id for pilots
     
     '''create and update the values'''
-    lets_update = Updateship(db)
-    lets_update.create_new_collection("starships")
+    lets_update = Updateship(db) #initialise all updates
+    lets_update.create_new_collection("starships") #
     data_api = lets_update.starship_data_api()
 
     data_sort = []
